@@ -1,6 +1,7 @@
  
 # DriftWithBloc- Transaction Manager
 
+
 A Flutter app for managing financial transactions with local database storage.
 
 ## Features
@@ -63,5 +64,44 @@ lib/
 ├── data/                # Data layer
 │   ├── database/        # Drift database
 │   ├── mappers/         # Entity mappers
-│   └─
- 
+│   └── repositories/    # Repository implementations
+├── domain/              # Business logic
+│   ├── models/          # Domain models
+│   ├── repositories/    # Repository interfaces
+│   └── usecases/        # Business use cases
+└── presentation/        # UI layer
+    ├── bloc/            # State management
+    ├── pages/           # App screens
+    └── widgets/         # Reusable widgets
+```
+
+## Tech Stack
+
+- **Flutter** - UI framework
+- **Drift** - Database ORM
+- **BLoC** - State management
+- **GetIt** - Dependency injection
+- **Dartz** - Functional programming
+
+## Key Files
+
+- `lib/main.dart` - App entry point
+- `lib/data/database/app_database.dart` - Database configuration
+- `lib/presentation/pages/transaction_list_page.dart` - Main screen
+- `pubspec.yaml` - Dependencies
+
+## Troubleshooting
+
+**Build issues?**
+```bash
+flutter clean
+flutter pub get
+flutter packages pub run build_runner build --delete-conflicting-outputs
+```
+
+**Database errors?**
+```bash
+# Delete the app and reinstall to reset database
+flutter clean
+flutter run
+```
